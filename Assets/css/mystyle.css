@@ -1,0 +1,93 @@
+/* Pengaturan Scroll Halus */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Efek Hover untuk Card yang tidak tersedia di class bawaan Bootstrap 4.6 */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.2) !important;
+}
+
+/* Menghilangkan border biru tebal saat input form di-klik (focus) */
+.form-control:focus {
+    background-color: #1a1a1a;
+    color: #17a2b8; /* Warna teks info bootstrap */
+    border-color: #17a2b8;
+    box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.25);
+}
+
+/* =========================================
+   CONTACT SECTION (CUSTOM RECREATION)
+   ========================================= */
+
+/* Latar Belakang menggunakan bg-secondary Bootstrap */
+.contact-section {
+    min-height: 80vh; /* Agar areanya lega dari atas ke bawah */
+    /* background-color: #141210; <--- BARIS INI DIHAPUS */
+}
+
+/* Jarak huruf (Letter Spacing) */
+.tracking-widest {
+    letter-spacing: 3px;
+    font-size: 0.85rem;
+}
+
+/* Warna Oranye Aksent */
+.contact-accent-text {
+    color: #3b3531;
+}
+
+/* Garis di samping tulisan CONTACT */
+.contact-line {
+    display: inline-block;
+    height: 1px;
+    width: 35px;
+    background-color: #3b3531;
+}
+
+/* Warna Judul Beige/Krem Terang */
+.contact-title {
+    color: #f5eedf;
+    letter-spacing: -1px; 
+}
+
+/* Warna Sub-judul Beige Redup (Opsional: Anda bisa mengubahnya menjadi warna putih jika dirasa kurang kontras dengan abu-abu bg-secondary) */
+.contact-subtitle {
+    color: #e9ecef; /* Disesuaikan menjadi abu-abu sangat terang agar kontras dengan bg-secondary */
+    font-size: 1.1rem;
+}
+
+/* Tombol Kustom dengan Sudut Terpotong (Clip-Path) */
+.btn-custom-orange {
+    background-color: #3b3531;
+    color: #141210 !important; 
+    border: none;
+    border-radius: 0; 
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-custom-orange:hover {
+    background-color: #3b3531;
+    transform: translateY(-3px);
+}
+
+/* Tautan Sosial Media Bawah */
+.contact-links a {
+    color: #e9ecef; /* Disesuaikan agar kontras dengan bg-secondary */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: #ffffff; 
+}
