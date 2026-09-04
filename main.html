@@ -7,12 +7,14 @@
     
     <!-- Link to Bootstrap 4.6 CSS -->
     <link rel="stylesheet" href="Assets/css/bootstrap.min.css">
+    <!-- FontAwesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Link to Custom CSS -->
     <link rel="stylesheet" href="Assets/css/mystyle.css">
 </head>
-<body class="bg-light">
+<body class="bg-light text-dark">
 
-    <!-- Navigation (100% Bootstrap Classes) -->
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-3 border-bottom border-info shadow-sm">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
@@ -25,91 +27,119 @@
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto text-monospace small">
-                    <li class="nav-item active">
-                        <a class="nav-link text-uppercase px-3 text-info font-weight-bold" href="#hero">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase px-3 text-light" href="#about">STUDY</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase px-3 text-light" href="#services">EXPERTISE</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase px-3 text-light" href="#project">PROJECT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase px-3 text-light" href="#contact">CONTACT</a>
-                    </li>
+                    <li class="nav-item active"><a class="nav-link text-uppercase px-3 text-light" href="#hero">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase px-3 text-light" href="#about">STUDY</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase px-3 text-light" href="#services">EXPERTISE</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase px-3 text-light" href="#project">PROJECT</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase px-3 text-light" href="#contact">CONTACT</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section (Using inline style only for background image) -->
+    <!-- Hero Section -->
     <section id="hero" class="d-flex align-items-center bg-dark text-white" style="min-height: 100vh; background: linear-gradient(rgba(10, 15, 25, 0.9), rgba(10, 15, 25, 0.95)), url('Assets/img/plcbg2.png') center/cover;">
         <div class="container mt-5 pt-5">
             <div class="row">
                 <div class="col-lg-8">
-                    <!-- Bootstrap Badge -->
                     <span class="badge border border-info text-info p-2 mb-3 text-monospace">MECHATRONICS & AUTOMATION SYSTEM</span>
-                    
                     <h1 class="display-3 font-weight-bolder mb-4">Bridging Software Logic <br> <span class="text-info">& Physical Motion</span></h1>
-                    
-                    <!-- Bootstrap Border Utilities -->
                     <p class="lead mb-5 border-left border-info pl-4 py-2" style="background-color: rgba(23, 162, 184, 0.1);">
-                        Specializing in industrial automation, IoT monitoring, and embedded systems development.
+                        Specializing in industrial automation, IoT monitoring, and embedded systems development, building energy auditor.
                     </p>
-                    
                     <a href="#contact" class="btn btn-outline-info btn-lg font-weight-bold px-5 py-3 shadow">Execute Connection</a>
                 </div>
             </div>
         </div>
     </section>
 
-     <!-- About Section (Terminal Style built with Bootstrap Cards) -->
-    <section id="about" class="py-5 bg-dark text-white">
+    <!-- About & Education Section (3 Kolom Sejajar) -->
+    <section id="about" class="py-5 bg-secondary">
         <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <!-- Bootstrap Card as Terminal -->
-                    <div class="card bg-dark border-info shadow-lg">
-                        <div class="card-header border-info bg-secondary d-flex align-items-center py-2">
-                            <span class="rounded-circle bg-danger mr-2" style="width: 12px; height: 12px;"></span>
-                            <span class="rounded-circle bg-warning mr-2" style="width: 12px; height: 12px;"></span>
-                            <span class="rounded-circle bg-success" style="width: 12px; height: 12px;"></span>
-                            <span class="ml-auto text-light small text-monospace">user@huda:~/profile</span>
-                        </div>
-                        <div class="card-body text-success text-monospace small p-4">
-                            <p>> Initiating profile build...</p>
-                            <p>> Load module: Politeknik ATMI Surakarta</p>
-                            <p>> Major: Teknik Mekatronika</p>
-                            <p>> Status: Undergraduate</p>
-                            <p>> Focus: Hardware troubleshooting, pointer-based C++ logic, automated fabric embroidery.</p>
-                            <p class="text-info mb-0">> Compilation successful. Ready for input_</p>
+            <div class="row">
+                
+                <!-- KOLOM 1: Foto Profil (Kiri) -->
+                <div class="col-lg-4 col-md-12 mb-5 mb-lg-0 text-center text-lg-left">
+                    <div class="border-0 p-3 d-inline-block shadow-sm bg-secondary">
+                        <!-- Tambahan max-width agar foto tidak terlalu mendominasi kolom -->
+                        <img src="Assets/img/huda2.jfif" alt="Profile Picture" class="img-fluid shadow" style="max-width: 250px;">
+                    </div>
+                    <p class="mt-3 font-monospace small text-muted text-uppercase tracking-widest pl-lg-2">ITS_ME.PNG</p>
+                </div>
+
+                <!-- KOLOM 2: Education (Tengah, posisinya di sebelah kiri About Me) -->
+                <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-custom-gray mr-3" style="width: 25px; height: 1px;"></div>
+                        <span class="text-custom-gray text-uppercase font-weight-bold tracking-widest small">Background</span>
+                    </div>
+
+                    <!-- Timeline Minimalis -->
+                    <div class="border-left pl-4 position-relative ml-2" style="border-color: #d1d4d8 !important;">
+                        <div class="position-relative">
+                           <div class="timeline-diamond bg-custom-gray position-absolute"></div>
+                                <p class="text-custom-gray font-monospace small mb-1 tracking-widest font-weight-bold">2024 - 2027</p>
+                                
+                                <!-- Duplikasi nama kampus digabung menjadi satu tag h5 agar proporsional -->
+                                <h5 class="font-weight-bold mb-1">Politeknik ATMI Surakarta</h5>
+
+                                <!-- Menghapus style manual dan menggunakan mb-2 agar jarak bawahnya lebih lega -->
+                                <h6 class="font-weight-bold mb-2">Undergraduate Student • Surakarta, Indonesia</h6>
+                                                                
+                                <p class="text-dark small" style="line-height: 1.6;">
+                                    Specialized study in Teknik Mekatronika. Core focus on Programmable Logic Controller (PLC) programming, pneumatic control circuits, embedded C++ systems, and 3D CAD design for industrial machinery.
+                                </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 offset-lg-1">
-                    <span class="text-info font-weight-bold text-uppercase text-monospace">System Architecture</span>
-                    <h2 class="font-weight-bold display-4 mb-4 mt-2">Engineering the Future</h2>
-                    <p class="lead text-light mb-4">Bridging the gap between code and physical infrastructure.</p>
-                    <p class="text-muted mb-0">From resolving PLC power supply instability to conceptualizing automated systems, I thrive on complex problem-solving in manufacturing environments. My work ensures that software logic perfectly translates into precise physical motion.</p>
+
+                <!-- KOLOM 3: About Me (Kanan) -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-custom-gray mr-3" style="width: 25px; height: 1px;"></div>
+                        <span class="text-custom-gray text-uppercase font-weight-bold tracking-widest small">About Me</span>
+                    </div>
+
+                    <!-- Menggunakan h2 biasa (tanpa display-4) agar proporsional di kolom sempit -->
+                    <h2 class="font-weight-bold mb-4">Huda Nidhar</h2>
+
+                    <!-- Inline style font-size dihapus agar menyesuaikan ukuran standar paragraf Bootstrap -->
+                    <p class="mb-3 text-dark">
+                        I am an undergraduate studying Teknik Mekatronika at Politeknik ATMI Surakarta. My background bridges mechanical systems, electronics, and informatics, but my real passion lies in building software, troubleshooting hardware, and orchestrating complex automation architectures.
+                    </p>
+                    <p class="mb-4 text-dark">
+                        When I'm off the clock, you'll usually find me tinkering—writing pointer-based C++ logic, prototyping new sensor frameworks, or pulling back the hood on machinery.
+                    </p>
+
+                    <!-- Socials -->
+                    <div>
+                        <p class="font-weight-bold mb-3 small">Socials:</p>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-secondary rounded-circle d-flex align-items-center justify-content-center mr-3 btn-social" style="width: 40px; height: 40px;">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="btn btn-secondary rounded-circle d-flex align-items-center justify-content-center btn-social" style="width: 40px; height: 40px;">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-
-    <!-- Expertise / Services Section -->
+    <!-- Expertise Section -->
     <section id="services" class="py-5 bg-secondary">
         <div class="container py-5">
+            <!-- Section Title -->
             <div class="text-center mb-5">
-                <h2 class="font-weight-bold display-4 text-dark">Technical Capabilities</h2>
+                <h2 class="font-weight-bold display-4 text-white">Technical Capabilities</h2>
                 <hr class="bg-info mb-4" style="width: 80px; height: 4px; border: none; border-radius: 2px;">
             </div>
             
+            <!-- Cards Row -->
             <div class="row mt-5">
-                <!-- Service Card 1 -->
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 border-0 shadow card-hover bg-white p-4">
                         <img src="Assets/img/webpage.png" alt="Embedded Systems" class="w-25 mb-4">
@@ -122,7 +152,6 @@
                     </div>
                 </div>
                 
-                <!-- Service Card 2 -->
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 border-0 shadow card-hover bg-white p-4">
                         <img src="Assets/img/rocket.png" alt="Industrial Automation" class="w-25 mb-4">
@@ -135,7 +164,6 @@
                     </div>
                 </div>
                 
-                <!-- Service Card 3 -->
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 border-0 shadow card-hover bg-white p-4">
                         <img src="Assets/img/book-stack.png" alt="CAD Design" class="w-25 mb-4">
@@ -148,25 +176,102 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Skill Progress Bars Row -->
+            <div class="row mt-5 pt-4">
+                
+                <!-- Left Column Skills -->
+                <div class="col-md-6 pr-lg-5">
+                    
+                    <!-- Skill 1 -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="font-weight-bold text-white">PLC & Ladder Logic</span>
+                            <span class="text-white font-weight-bold">90%</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 2 -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="font-weight-bold text-white">C++ (Embedded Systems)</span>
+                            <span class="text-white font-weight-bold">85%</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="font-weight-bold text-white">Pneumatic Control Circuits</span>
+                            <span class="text-white font-weight-bold">80%</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column Skills -->
+                <div class="col-md-6 pl-lg-5">
+                    
+                    <!-- Skill 4 -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="font-weight-bold text-white">Microcontrollers (Arduino/ESP)</span>
+                            <span class="text-white font-weight-bold">85%</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 5 -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="font-weight-bold text-white">3D CAD Modeling</span>
+                            <span class="text-white font-weight-bold">75%</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 6 -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="font-weight-bold text-white">Robotic Kinematics</span>
+                            <span class="text-white font-weight-bold">70%</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- End of Progress Bars -->
+
         </div>
     </section>
-
-<section id="project" class="py-5" style="min-height: 100vh; background: linear-gradient(rgba(10, 15, 25, 0.8), rgba(10, 15, 25, 0.9)), url('Assets/img/gear1.png') center/cover;">
+    <!-- Project Section -->
+    <section id="project" class="py-5" style="min-height: 100vh; background: linear-gradient(rgba(10, 15, 25, 0.8), rgba(10, 15, 25, 0.9)), url('Assets/img/plcbg2.png') center/cover;">
         <div class="container py-5">
-            <!-- Judul Section -->
             <div class="text-center mb-5">
-                 <!-- text-white ditambahkan agar kontras dengan background -->
                  <h2 class="display-4 font-weight-bold text-white mb-2">Featured Projects</h2>
                  <hr class="bg-info mb-4" style="width: 80px; height: 4px; border: none; border-radius: 2px;">
             </div>
 
-            <!-- Grid Baris -->
             <div class="row">
-                
-                <!-- Card 1 -->
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 border-0 shadow-sm bg-white">
-                        <img src="Assets/img/webpage.png" class="card-img-top p-4" alt="IoT Project">
+                        <img src="Assets/img/iot" class="card-img-top p-4" alt="IoT Project">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title font-weight-bold">IoT Monitoring System</h5>
                             <p class="card-text text-muted">A multi-protocol system integrating Arduino Mega 2560, ESP8266 web servers, and Nextion displays for sensor logging.</p>
@@ -175,22 +280,20 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 border-0 shadow-sm bg-white">
-                        <img src="Assets/img/rocket.png" class="card-img-top p-4" alt="Automation Project">
+                        <img src="Assets/img/cnc" class="card-img-top p-4" alt="Automation Project">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title font-weight-bold">Automated Embroidery</h5>
-                            <p class="card-text text-muted">A scalable design adapting 3D printer mechanical axes and motion control logic for batch fabric embroidery operations.</p>
+                            <p class="card-text text-muted">Developing system architectures and control logic for 3-axis CNC milling machines, including G-code execution workflows and use case modeling.</p>
                             <a href="#" class="btn btn-outline-info mt-auto font-weight-bold">View System</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 border-0 shadow-sm bg-white">
-                        <img src="Assets/img/book-stack.png" class="card-img-top p-4" alt="Industrial Logic">
+                        <img src="Assets/img/plc4" class="card-img-top p-4" alt="Industrial Logic">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title font-weight-bold">Industrial Control Logic</h5>
                             <p class="card-text text-muted">Development of PLC ladder logic for automated sequencing, state machines, and pneumatic circuit configurations.</p>
@@ -198,37 +301,30 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
    
     <!-- Contact Section -->
-    <!-- Tambahkan bg-secondary di sini -->
     <section id="contact" class="contact-section d-flex align-items-center bg-secondary">
         <div class="container text-center py-5">
             
-            <!-- Label Atas (Garis - CONTACT - Garis) -->
             <div class="d-flex justify-content-center align-items-center mb-4">
                 <span class="contact-line mr-3"></span>
                 <span class="text-uppercase font-weight-bold contact-accent-text tracking-widest">Contact</span>
                 <span class="contact-line ml-3"></span>
             </div>
 
-            <!-- Judul Utama -->
             <h2 class="display-4 font-weight-bold text-white mb-2">Let's build something</h2>
 
-            <!-- Sub Judul -->
-            <p class="contact-subtitle mb-5 mx-auto" style="max-width: 600px;">
+            <p class="contact-subtitle mb-5 mx-auto" style="max-width: 600px; color: #e9ecef;">
                 Open to freelance projects, collaborations, and interesting conversations.
             </p>
 
-            <!-- Tombol Oranye dengan Potongan Sudut (Chamfer) -->
-            <a href="mailto:youremail@example.com" class="btn btn-custom-orange font-weight-bold px-5 py-3 mb-5">
+            <a href="mailto:youremail@example.com" class="btn btn-custom-gray font-weight-bold px-5 py-3 mb-5">
                 Send a message
             </a>
 
-            <!-- Link Sosial Media Bawah -->
             <div class="d-flex justify-content-center flex-wrap contact-links mt-4">
                 <a href="#" class="mx-3 small font-monospace"><span class="contact-accent-text mr-2">•</span>GitHub</a>
                 <a href="#" class="mx-3 small font-monospace"><span class="contact-accent-text mr-2">•</span>LinkedIn</a>
@@ -240,11 +336,11 @@
     <!-- Footer -->
     <footer class="bg-dark py-4 text-center text-light border-top border-info">
         <div class="container">
-            <p class="mb-0 text-muted text-monospace small">&copy; 2026 Huda. Sys_Offline.</p>
+            <p class="mb-0 text-muted text-monospace small">&copy; 2026 Huda Nidhar.</p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS Dependencies -->
+    <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
