@@ -93,3 +93,7 @@
 textarea.custom-input {
     resize: none;
 }
+/* Mengaktifkan scroll halus untuk seluruh halaman */
+html {
+    scroll-behavior: smooth;
+}

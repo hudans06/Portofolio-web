@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="Assets/css/bootstrap.min.css">
     <!-- FontAwesome for Social Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Link to AOS (Animate On Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Link to Custom CSS -->
     <link rel="stylesheet" href="Assets/css/mystyle.css">
 </head>
@@ -28,7 +30,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto text-monospace small">
                     <li class="nav-item active"><a class="nav-link text-uppercase px-3 text-light" href="#hero">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link text-uppercase px-3 text-light" href="#about">STUDY</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase px-3 text-light" href="#about">ABOUT</a></li>
                     <li class="nav-item"><a class="nav-link text-uppercase px-3 text-light" href="#services">EXPERTISE</a></li>
                     <li class="nav-item"><a class="nav-link text-uppercase px-3 text-light" href="#project">PROJECT</a></li>
                     <li class="nav-item"><a class="nav-link text-uppercase px-3 text-light" href="#contact">CONTACT</a></li>
@@ -38,7 +40,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="d-flex align-items-center bg-dark text-white" style="min-height: 100vh; background: linear-gradient(rgba(10, 15, 25, 0.9), rgba(10, 15, 25, 0.95)), url('Assets/img/plcbg2.png') center/cover fixed;">
+    <section id="hero" class="d-flex align-items-center bg-dark text-white" style="min-height: 100vh; background: linear-gradient(rgba(10, 15, 25, 0.9), rgba(10, 15, 25, 0.95)), url('Assets/img/plcbg2.png') center/cover fixed;" data-aos="fade-down">
         <div class="container mt-5 pt-5">
             <div class="row">
                 <div class="col-lg-8">
@@ -55,7 +57,7 @@
     </section>
 
     <!-- About & Education Section (3 Kolom Sejajar) -->
-    <section id="about" class="py-5 bg-secondary">
+    <section id="about" class="py-5 bg-secondary " data-aos="fade-down">
         <div class="container py-5">
             <div class="row">
                 
@@ -131,10 +133,10 @@
     </section>
 
     <!-- Expertise Section -->
-    <section id="services" class="py-5 bg-secondary">
+    <section id="services" class="py-5 bg-secondary" data-aos="fade-down">
         <div class="container py-5">
             <!-- Section Title -->
-            <div class="text-center mb-5">
+            <div class="text-center mb-5" >
                 <h2 class="font-weight-bold display-4 text-white">Technical Capabilities</h2>
                 <hr class="bg-info mb-4" style="width: 80px; height: 4px; border: none; border-radius: 2px;">
             </div>
@@ -142,131 +144,63 @@
             <!-- Cards Row -->
             <div class="row mt-5">
                 <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow card-hover bg-white p-4">
+                    <!-- Penambahan border-top berwarna biru (info) dan shadow-lg -->
+                    <div class="card h-100 border-0 shadow-lg bg-white p-4" style="border-top: 4px solid #17a2b8 !important;">
                         <img src="Assets/img/webpage.png" alt="Embedded Systems" class="w-25 mb-4">
                         <h4 class="font-weight-bold mb-3">Embedded Logic</h4>
                         <p class="text-muted">Multi-protocol IoT monitoring systems utilizing Arduino Mega 2560, ESP8266, and Nextion displays.</p>
                         <div class="mt-auto">
-                            <span class="badge badge-dark p-2">C++</span>
-                            <span class="badge badge-dark p-2">Microcontrollers</span>
+                            <!-- Kombinasi badge Biru dan Abu-abu -->
+                            <span class="badge badge-info p-2 mb-1">C++</span>
+                            <span class="badge text-white p-2 mb-1 bg-custom-gray">Microcontrollers</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow card-hover bg-white p-4">
+                    <div class="card h-100 border-0 shadow-lg bg-white p-4" style="border-top: 4px solid #17a2b8 !important;">
                         <img src="Assets/img/rocket.png" alt="Industrial Automation" class="w-25 mb-4">
                         <h4 class="font-weight-bold mb-3">Industrial Control</h4>
                         <p class="text-muted">Designing state machines, VSD inverter configurations, and PLC ladder logic for automated sequencing.</p>
                         <div class="mt-auto">
-                            <span class="badge badge-dark p-2">PLC</span>
-                            <span class="badge badge-dark p-2">Pneumatics</span>
+                            <span class="badge badge-info p-2 mb-1">PLC</span>
+                            <span class="badge text-white p-2 mb-1 bg-custom-gray">Pneumatics</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow card-hover bg-white p-4">
+                    <div class="card h-100 border-0 shadow-lg bg-white p-4" style="border-top: 4px solid #17a2b8 !important;">
                         <img src="Assets/img/book-stack.png" alt="CAD Design" class="w-25 mb-4">
                         <h4 class="font-weight-bold mb-3">Mechanical & CAD</h4>
                         <p class="text-muted">Developing scalable mass-production designs, analyzing robotic kinematics, and formatting 3-axis CNC workflows.</p>
                         <div class="mt-auto">
-                            <span class="badge badge-dark p-2">3D CAD</span>
-                            <span class="badge badge-dark p-2">Robotics</span>
+                            <span class="badge badge-info p-2 mb-1">3D CAD</span>
+                            <span class="badge text-white p-2 mb-1 bg-custom-gray">Robotics</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Skill Progress Bars Row -->
+            <!-- Chart.js Skill Graph (Dark Dashboard Style) -->
             <div class="row mt-5 pt-4">
-                
-                <!-- Left Column Skills -->
-                <div class="col-md-6 pr-lg-5">
-                    
-                    <!-- Skill 1 -->
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="font-weight-bold text-white">PLC & Ladder Logic</span>
-                            <span class="text-white font-weight-bold">90%</span>
-                        </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="col-lg-10 mx-auto">
+                    <!-- Mengubah background menjadi abu gelap kustom dan menambahkan border biru di kiri -->
+                    <div class="card border-0 shadow-lg p-3 p-md-4 bg-custom-gray" style="border-radius: 15px; border-left: 5px solid #17a2b8 !important;">
+                        <div style="position: relative; height: 450px; width: 100%;">
+                            <canvas id="skillsChart"></canvas>
                         </div>
                     </div>
-
-                    <!-- Skill 2 -->
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="font-weight-bold text-white">C++ (Embedded Systems)</span>
-                            <span class="text-white font-weight-bold">85%</span>
-                        </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-
-                    <!-- Skill 3 -->
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="font-weight-bold text-white">Pneumatic Control Circuits</span>
-                            <span class="text-white font-weight-bold">80%</span>
-                        </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Right Column Skills -->
-                <div class="col-md-6 pl-lg-5">
-                    
-                    <!-- Skill 4 -->
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="font-weight-bold text-white">Microcontrollers (Arduino/ESP)</span>
-                            <span class="text-white font-weight-bold">85%</span>
-                        </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-
-                    <!-- Skill 5 -->
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="font-weight-bold text-white">3D CAD Modeling</span>
-                            <span class="text-white font-weight-bold">75%</span>
-                        </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-
-                    <!-- Skill 6 -->
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="font-weight-bold text-white">Robotic Kinematics</span>
-                            <span class="text-white font-weight-bold">70%</span>
-                        </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-            <!-- End of Progress Bars -->
-
         </div>
     </section>
     
     <!-- Project Section -->
-    <section id="project" class="py-5" style="min-height: 100vh; background: linear-gradient(rgba(10, 15, 25, 0.8), rgba(10, 15, 25, 0.9)), url('Assets/img/plcbg2.png') center/cover fixed;">
+    <section id="project" class="py-5" style="min-height: 100vh; background: linear-gradient(rgba(10, 15, 25, 0.8), rgba(10, 15, 25, 0.9)), url('Assets/img/plcbg2.png') center/cover fixed;" data-aos="fade-down">
         <div class="container py-5">
             <div class="text-center mb-5">
-                 <h2 class="display-4 font-weight-bold text-white mb-2">Featured Projects</h2>
+                 <h2 class="display-4 font-weight-bold text-white mb-2" data-aos="fade-down">Featured Projects</h2>
                  <hr class="bg-info mb-4" style="width: 80px; height: 4px; border: none; border-radius: 2px;">
             </div>
 
@@ -308,12 +242,12 @@
     </section>
    
    <!-- Contact Section -->
-    <section id="contact" class="contact-section d-flex align-items-center bg-secondary">
+    <section id="contact" class="contact-section d-flex align-items-center bg-secondary" data-aos="fade-down">
         <div class="container py-5">
             
-            <div class="d-flex justify-content-center align-items-center mb-4 text-center">
+            <div class="d-flex justify-content-center align-items-center mb-4 text-center" data-aos="fade-down">
                 <span class="contact-line mr-3"></span>
-                <span class="text-uppercase font-weight-bold contact-accent-text tracking-widest">Contact</span>
+                <span class="text-uppercase font-weight-bold contact-accent-text tracking-widest" >Contact</span>
                 <span class="contact-line ml-3"></span>
             </div>
 
@@ -367,6 +301,114 @@
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+   <!-- Inisialisasi Chart.js untuk Dark Stacked Radar Chart -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvasEl = document.getElementById('skillsChart');
+            
+            if (canvasEl) {
+                const ctx = canvasEl.getContext('2d');
+                
+                const skillsChart = new Chart(ctx, {
+                    type: 'radar',
+                    data: {
+                        labels: [
+                            ['PLC &', 'Ladder Logic'], 
+                            ['Microcontrollers', '(Arduino/ESP)'], 
+                            ['C++', '(Embedded Systems)'], 
+                            ['3-Axis CNC', '& CAD'], 
+                            ['Pneumatic', 'Circuits'], 
+                            ['Robotic', 'Kinematics']
+                        ],
+                        datasets: [
+                            {
+                                label: 'Practical Implementation',
+                                data: [85, 77, 85, 85, 83, 81],
+                                backgroundColor: 'rgba(23, 162, 184, 0.45)', 
+                                borderColor: '#17a2b8',
+                                pointBackgroundColor: '#17a2b8',
+                                pointBorderColor: '#fff',
+                                pointHoverBackgroundColor: '#fff',
+                                pointHoverBorderColor: '#17a2b8',
+                                pointRadius: 4,
+                                pointHoverRadius: 7,
+                                borderWidth: 2,
+                                fill: true
+                            },
+                            {
+                                label: 'Theoretical Knowledge',
+                                data: [81, 75, 85, 75, 75, 75],
+                                backgroundColor: 'rgba(209, 212, 216, 0.15)',
+                                borderColor: '#d1d4d8', 
+                                pointBackgroundColor: '#d1d4d8',
+                                pointBorderColor: '#fff',
+                                pointHoverBackgroundColor: '#fff',
+                                pointHoverBorderColor: '#d1d4d8',
+                                pointRadius: 4,
+                                pointHoverRadius: 7,
+                                borderWidth: 2,
+                                fill: true
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false, 
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                                labels: { 
+                                    color: '#e9ecef', 
+                                    font: { size: 14, weight: 'bold', family: "'Segoe UI', sans-serif" },
+                                    usePointStyle: true,
+                                    padding: 25
+                                }
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(0,0,0,0.8)', 
+                                titleFont: { size: 14 },
+                                bodyFont: { size: 14, weight: 'bold' },
+                                padding: 12,
+                                cornerRadius: 8,
+                                displayColors: true
+                            }
+                        },
+                        scales: {
+                            r: {
+                                // PERBAIKAN: Memindahkan min dan max ke sini agar skala wajib 0-100
+                                min: 0,
+                                max: 100,
+                                
+                                angleLines: { color: 'rgba(255, 255, 255, 0.1)' }, 
+                                grid: { color: 'rgba(255, 255, 255, 0.1)' },       
+                                pointLabels: {
+                                    font: { size: 13, weight: 'bold', family: "'Segoe UI', sans-serif" },
+                                    color: '#e9ecef', 
+                                    padding: 15
+                                },
+                                ticks: {
+                                    display: false, 
+                                    stepSize: 20 // Opsional: Membantu jaring (grid) terbagi rata 0, 20, 40, dst.
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inisialisasi AOS
+        AOS.init({
+            duration: 800, // Durasi animasi dalam milidetik (0.8 detik)
+            once: true,    // Animasi hanya berjalan satu kali saat pertama kali dilihat
+            offset: 100    // Jarak pemicu animasi dari bawah layar
+        });
+    </script>
 </body>
 </html>
