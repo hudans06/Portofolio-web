@@ -68,3 +68,28 @@
 .contact-links a:hover {
     color: #ffffff; 
 }
+/* =========================================
+   CONTACT FORM INPUTS
+   ========================================= */
+.custom-input {
+    background-color: rgba(255, 255, 255, 0.05); /* Latar belakang putih sangat transparan */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Garis tepi tipis */
+    color: #ffffff !important; /* Teks berwarna putih saat diketik */
+    border-radius: 0; /* Sudut tegas/kotak agar senada dengan tema industrial */
+    font-size: 1rem;
+}
+
+/* Mengubah warna teks panduan (placeholder) */
+.custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Efek saat form sedang diklik/diisi (Focus) */
+.custom-input:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #3b3531; /* Warna border mengikuti warna aksen custom-gray Anda */
+    box-shadow: 0 0 0 0.2rem rgba(59, 53, 49, 0.3); /* Bayangan luar (glow) saat fokus */
+}
+textarea.custom-input {
+    resize: none;
+}
