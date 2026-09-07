@@ -47,7 +47,8 @@
                     <p class="lead mb-5 border-left border-info pl-4 py-2" style="background-color: rgba(23, 162, 184, 0.1);">
                         Specializing in industrial automation, IoT monitoring, and embedded systems development, building energy auditor.
                     </p>
-                    <a href="#contact" class="btn btn-outline-info btn-lg font-weight-bold px-5 py-3 shadow">Execute Connection</a>
+                    <a href="#contact" class="btn btn-outline-info btn-lg font-weight-bold px-5 py-3 shadow" style="margin-right: 15px;">Execute Connection</a>
+                    <a href="#project" class="btn btn-outline-info btn-lg font-weight-bold px-5 py-3 shadow">View Project</a>
                 </div>
             </div>
         </div>
@@ -260,6 +261,7 @@
 
         </div>
     </section>
+    
     <!-- Project Section -->
     <section id="project" class="py-5" style="min-height: 100vh; background: linear-gradient(rgba(10, 15, 25, 0.8), rgba(10, 15, 25, 0.9)), url('Assets/img/plcbg2.png') center/cover fixed;">
         <div class="container py-5">
@@ -284,7 +286,7 @@
                     <div class="card h-100 border-0 shadow-sm bg-white">
                         <img src="Assets/img/cnc" class="card-img-top p-4" alt="Automation Project">
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title font-weight-bold">Automated Embroidery</h5>
+                            <h5 class="card-title font-weight-bold">Automated System</h5>
                             <p class="card-text text-muted">Developing system architectures and control logic for 3-axis CNC milling machines, including G-code execution workflows and use case modeling.</p>
                             <a href="#" class="btn btn-outline-info mt-auto font-weight-bold">View System</a>
                         </div>
@@ -307,24 +309,47 @@
    
     <!-- Contact Section -->
     <section id="contact" class="contact-section d-flex align-items-center bg-secondary">
-        <div class="container text-center py-5">
+        <div class="container py-5">
             
-            <div class="d-flex justify-content-center align-items-center mb-4">
+            <div class="d-flex justify-content-center align-items-center mb-4 text-center">
                 <span class="contact-line mr-3"></span>
                 <span class="text-uppercase font-weight-bold contact-accent-text tracking-widest">Contact</span>
                 <span class="contact-line ml-3"></span>
             </div>
 
-            <h2 class="display-4 font-weight-bold text-white mb-2">Let's build something</h2>
+            <h2 class="display-4 font-weight-bold text-white mb-2 text-center">Let's build something</h2>
 
-            <p class="contact-subtitle mb-5 mx-auto" style="max-width: 600px; color: #e9ecef;">
+            <p class="contact-subtitle mb-5 mx-auto text-center" style="max-width: 600px; color: #e9ecef;">
                 Open to freelance projects, collaborations, and interesting conversations.
             </p>
 
-            <a href="mailto:youremail@example.com" class="btn btn-custom-gray font-weight-bold px-5 py-3 mb-5">
-                Send a message
-            </a>
+            <!-- FORM START (Maksimal lebar disamakan dengan sub-judul agar rapi) -->
+            <form action="#" method="POST" class="mx-auto mb-5" style="max-width: 600px;">
+                <div class="form-row">
+                    <!-- Input Nama -->
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control form-control-lg custom-input" id="visitorName" name="name" placeholder="Your Name" required>
+                    </div>
+                    <!-- Input Email -->
+                    <div class="form-group col-md-6">
+                        <input type="email" class="form-control form-control-lg custom-input" id="visitorEmail" name="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <!-- Input Pesan -->
+                <div class="form-group">
+                    <textarea class="form-control form-control-lg custom-input" id="visitorMessage" name="message" rows="5" placeholder="How can we collaborate?" required></textarea>
+                </div>
+                
+                <!-- Tombol Submit (Menggunakan class chamfered abu-abu Anda) -->
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-custom-gray font-weight-bold px-5 py-3">
+                        Send a message
+                    </button>
+                </div>
+            </form>
+            <!-- FORM END -->
 
+            <!-- Social Links -->
             <div class="d-flex justify-content-center flex-wrap contact-links mt-4">
                 <a href="#" class="mx-3 small font-monospace"><span class="contact-accent-text mr-2">•</span>GitHub</a>
                 <a href="#" class="mx-3 small font-monospace"><span class="contact-accent-text mr-2">•</span>LinkedIn</a>
