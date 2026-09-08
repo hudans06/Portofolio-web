@@ -10,7 +10,7 @@
     <!-- FontAwesome for Social Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Link to AOS (Animate On Scroll) CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" >
+    <link rel="stylesheet" href="Assets/css/aos.css" >
     <!-- Link to Custom CSS -->
     <link rel="stylesheet" href="Assets/css/mystyle.css">
 </head>
@@ -342,9 +342,9 @@
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Assets/js/jquery"></script>
+    <script src="Assets/js/chart.js"></script>
+    <script src="Assets/js/bootstrap.bundle.min.js"></script>
 
    <!-- Inisialisasi Chart.js Dinamis -->
     <script>
@@ -458,7 +458,7 @@
         });
     </script>
     <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="Assets/js/aos.js"></script>
     <script>
         // Inisialisasi AOS
         AOS.init({
