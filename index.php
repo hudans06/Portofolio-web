@@ -108,10 +108,7 @@
 
                     <!-- Inline style font-size dihapus agar menyesuaikan ukuran standar paragraf Bootstrap -->
                     <p class="mb-3 text-dark">
-                        I am an undergraduate studying Teknik Mekatronika at Politeknik ATMI Surakarta. My background bridges mechanical systems, electronics, and informatics, but my real passion lies in building software, troubleshooting hardware, and orchestrating complex automation architectures.
-                    </p>
-                    <p class="mb-4 text-dark">
-                        When I'm off the clock, you'll usually find me tinkering—writing pointer-based C++ logic, prototyping new sensor frameworks, or pulling back the hood on machinery.
+                        I am an undergraduate studying Teknik Mekatronika at Politeknik ATMI Surakarta. My background bridges mechanical systems, electronics, and informatics, but my real passion lies in building electrical system, troubleshooting hardware, and orchestrating complex automation architectures.
                     </p>
 
                     <!-- Socials -->
