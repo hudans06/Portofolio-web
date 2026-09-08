@@ -40,8 +40,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="d-flex align-items-center bg-dark text-white" style="min-height: 100vh; background: linear-gradient(rgba(10, 15, 25, 0.9), rgba(10, 15, 25, 0.95)), url('Assets/img/plcbg2.png') center/cover fixed;" data-aos="fade-down">
-        <div class="container mt-5 pt-5">
+    <section id="hero" class="d-flex align-items-center bg-dark text-white" style="min-height: 100vh; background: linear-gradient(rgba(10, 15, 25, 0.9), rgba(10, 15, 25, 0.95)), url('Assets/img/plcbg2.png') center/cover fixed;">
+        <div class="container mt-5 pt-5" data-aos="fade-down">
             <div class="row">
                 <div class="col-lg-8">
                     <span class="badge border border-info text-info p-2 mb-3 text-monospace">MECHATRONICS & AUTOMATION SYSTEM</span>
@@ -182,11 +182,14 @@
                 </div>
             </div>
 
-            <!-- Chart.js Skill Graph (Dark Dashboard Style) -->
+           <!-- Chart.js Skill Graph (Real-time Dashboard Style) -->
             <div class="row mt-5 pt-4">
                 <div class="col-lg-10 mx-auto">
-                    <!-- Mengubah background menjadi abu gelap kustom dan menambahkan border biru di kiri -->
                     <div class="card border-0 shadow-lg p-3 p-md-4 bg-custom-gray" style="border-radius: 15px; border-left: 5px solid #17a2b8 !important;">
+                        
+                        <!-- TAMBAHAN: Label Semester yang akan berubah dinamis -->
+                        <h4 id="labelSemester" class="text-info text-center font-weight-bold mb-3 tracking-widest text-uppercase">Memuat Data...</h4>
+                        
                         <div style="position: relative; height: 450px; width: 100%;">
                             <canvas id="skillsChart"></canvas>
                         </div>
@@ -196,47 +199,86 @@
         </div>
     </section>
     
-    <!-- Project Section -->
-    <section id="project" class="py-5" style="min-height: 100vh; background: linear-gradient(rgba(10, 15, 25, 0.8), rgba(10, 15, 25, 0.9)), url('Assets/img/plcbg2.png') center/cover fixed;" data-aos="fade-down">
+    <!-- Project Section (Carousel / Slider Dinamis) -->
+    <section id="project" class="py-5" style="min-height: 100vh; background: linear-gradient(rgba(10, 15, 25, 0.8), rgba(10, 15, 25, 0.9)), url('Assets/img/plcbg2.png') center/cover fixed;">
         <div class="container py-5">
-            <div class="text-center mb-5">
-                 <h2 class="display-4 font-weight-bold text-white mb-2" data-aos="fade-down">Featured Projects</h2>
+            <div class="text-center mb-5" data-aos="fade-down">
+                 <h2 class="display-4 font-weight-bold text-white mb-2">Featured Projects</h2>
                  <hr class="bg-info mb-4" style="width: 80px; height: 4px; border: none; border-radius: 2px;">
             </div>
 
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm bg-white">
-                        <img src="Assets/img/iot" class="card-img-top p-4" alt="IoT Project">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title font-weight-bold">IoT Monitoring System</h5>
-                            <p class="card-text text-muted">A multi-protocol system integrating Arduino Mega 2560, ESP8266 web servers, and Nextion displays for sensor logging.</p>
-                            <a href="#" class="btn btn-outline-info mt-auto font-weight-bold">View System</a>
+            <!-- Wadah Slider (Carousel) -->
+            <div id="projectCarousel" class="carousel slide" data-ride="carousel" data-aos="fade-up">
+                <div class="carousel-inner pb-5">
+                    
+                    <?php
+                    // 1. Panggil koneksi database
+                    include 'koneksi.php';
+
+                    // 2. Ambil data dari tabel-proyek
+                    $query_proyek = "SELECT * FROM `tabel-proyek`";
+                    $hasil_proyek = mysqli_query($koneksi, $query_proyek);
+
+                    // 3. Pindahkan data dari database ke dalam sebuah Array (Daftar)
+                    $semua_proyek = [];
+                    while($baris = mysqli_fetch_assoc($hasil_proyek)) {
+                        $semua_proyek[] = $baris;
+                    }
+
+                    // 4. Pecah daftar proyek menjadi kelompok-kelompok (1 kelompok isi 3 proyek)
+                    // Ini seperti membagi komponen ke dalam rak-rak berbeda
+                    $kelompok_proyek = array_chunk($semua_proyek, 3);
+
+                    // 5. Looping untuk setiap SLIDE (Kelompok)
+                    foreach($kelompok_proyek as $index => $kelompok) {
+                        // Slide pertama harus diberi class 'active' agar muncul pertama kali
+                        $active_class = ($index == 0) ? 'active' : '';
+                    ?>
+                        <div class="carousel-item <?php echo $active_class; ?>">
+                            <div class="row">
+                                <?php 
+                                // 6. Looping untuk mencetak KARTU di dalam Slide tersebut
+                                foreach($kelompok as $proyek) { 
+                                ?>
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card h-100 border-0 shadow-sm bg-white">
+                                            <img src="<?php echo $proyek['gambar']; ?>" class="card-img-top p-4" alt="<?php echo $proyek['judul']; ?>">
+                                            <div class="card-body d-flex flex-column">
+                                                <h5 class="card-title font-weight-bold"><?php echo $proyek['judul']; ?></h5>
+                                                <p class="card-text text-muted"><?php echo $proyek['deskripsi']; ?></p>
+                                                <a href="#" class="btn btn-outline-info mt-auto font-weight-bold">View System</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php 
+                                } // Penutup loop KARTU 
+                                ?>
+                            </div>
                         </div>
-                    </div>
+                    <?php 
+                    } // Penutup loop SLIDE 
+                    ?>
+
                 </div>
 
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm bg-white">
-                        <img src="Assets/img/cnc" class="card-img-top p-4" alt="Automation Project">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title font-weight-bold">Automated System</h5>
-                            <p class="card-text text-muted">Developing system architectures and control logic for 3-axis CNC milling machines, including G-code execution workflows and use case modeling.</p>
-                            <a href="#" class="btn btn-outline-info mt-auto font-weight-bold">View System</a>
-                        </div>
-                    </div>
-                </div>
+                <!-- Tombol Panah Kiri dan Kanan untuk Navigasi Manual -->
+                <!-- Hanya akan berfungsi/terlihat rapi jika proyek lebih dari 3 -->
+                <a class="carousel-control-prev" href="#projectCarousel" role="button" data-slide="prev" style="width: 5%; left: -5%;">
+                    <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(140deg);"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#projectCarousel" role="button" data-slide="next" style="width: 5%; right: -5%;">
+                    <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(140deg);"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                
+                <!-- Indikator Titik-titik di bawah slider -->
+                <ol class="carousel-indicators" style="bottom: -20px;">
+                    <?php foreach($kelompok_proyek as $index => $kelompok): ?>
+                        <li data-target="#projectCarousel" data-slide-to="<?php echo $index; ?>" class="<?php echo $index == 0 ? 'active' : ''; ?>" style="background-color: #17a2b8;"></li>
+                    <?php endforeach; ?>
+                </ol>
 
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm bg-white">
-                        <img src="Assets/img/plc4" class="card-img-top p-4" alt="Industrial Logic">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title font-weight-bold">Industrial Control Logic</h5>
-                            <p class="card-text text-muted">Development of PLC ladder logic for automated sequencing, state machines, and pneumatic circuit configurations.</p>
-                            <a href="#" class="btn btn-outline-info mt-auto font-weight-bold">View System</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -258,7 +300,7 @@
             </p>
 
             <!-- FORM START (Maksimal lebar disamakan dengan sub-judul agar rapi) -->
-            <form action="#" method="POST" class="mx-auto mb-5" style="max-width: 600px;">
+            <form action="simpan_pesan.php" method="POST" class="mx-auto mb-5" style="max-width: 600px;">
                 <div class="form-row">
                     <!-- Input Nama -->
                     <div class="form-group col-md-6">
@@ -304,7 +346,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-   <!-- Inisialisasi Chart.js untuk Dark Stacked Radar Chart -->
+   <!-- Inisialisasi Chart.js Dinamis -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const canvasEl = document.getElementById('skillsChart');
@@ -312,6 +354,7 @@
             if (canvasEl) {
                 const ctx = canvasEl.getContext('2d');
                 
+                // 1. Buat cetakan grafik kosong terlebih dahulu
                 const skillsChart = new Chart(ctx, {
                     type: 'radar',
                     data: {
@@ -326,29 +369,21 @@
                         datasets: [
                             {
                                 label: 'Practical Implementation',
-                                data: [85, 77, 85, 85, 83, 81],
+                                data: [0,0,0,0,0,0], // Data awal 0
                                 backgroundColor: 'rgba(23, 162, 184, 0.45)', 
                                 borderColor: '#17a2b8',
                                 pointBackgroundColor: '#17a2b8',
                                 pointBorderColor: '#fff',
-                                pointHoverBackgroundColor: '#fff',
-                                pointHoverBorderColor: '#17a2b8',
-                                pointRadius: 4,
-                                pointHoverRadius: 7,
                                 borderWidth: 2,
                                 fill: true
                             },
                             {
                                 label: 'Theoretical Knowledge',
-                                data: [81, 75, 85, 75, 75, 75],
+                                data: [0,0,0,0,0,0], // Data awal 0
                                 backgroundColor: 'rgba(209, 212, 216, 0.15)',
                                 borderColor: '#d1d4d8', 
                                 pointBackgroundColor: '#d1d4d8',
                                 pointBorderColor: '#fff',
-                                pointHoverBackgroundColor: '#fff',
-                                pointHoverBorderColor: '#d1d4d8',
-                                pointRadius: 4,
-                                pointHoverRadius: 7,
                                 borderWidth: 2,
                                 fill: true
                             }
@@ -360,43 +395,65 @@
                         plugins: {
                             legend: {
                                 position: 'top',
-                                labels: { 
-                                    color: '#e9ecef', 
-                                    font: { size: 14, weight: 'bold', family: "'Segoe UI', sans-serif" },
-                                    usePointStyle: true,
-                                    padding: 25
-                                }
+                                labels: { color: '#e9ecef', font: { size: 14, weight: 'bold' }, usePointStyle: true, padding: 25 }
                             },
-                            tooltip: {
-                                backgroundColor: 'rgba(0,0,0,0.8)', 
-                                titleFont: { size: 14 },
-                                bodyFont: { size: 14, weight: 'bold' },
-                                padding: 12,
-                                cornerRadius: 8,
-                                displayColors: true
-                            }
+                            tooltip: { backgroundColor: 'rgba(0,0,0,0.8)', titleFont: { size: 14 }, bodyFont: { size: 14, weight: 'bold' }, padding: 12, cornerRadius: 8 }
                         },
                         scales: {
                             r: {
-                                // PERBAIKAN: Memindahkan min dan max ke sini agar skala wajib 0-100
-                                min: 0,
-                                max: 100,
-                                
+                                min: 0, max: 100,
                                 angleLines: { color: 'rgba(255, 255, 255, 0.1)' }, 
                                 grid: { color: 'rgba(255, 255, 255, 0.1)' },       
-                                pointLabels: {
-                                    font: { size: 13, weight: 'bold', family: "'Segoe UI', sans-serif" },
-                                    color: '#e9ecef', 
-                                    padding: 15
-                                },
-                                ticks: {
-                                    display: false, 
-                                    stepSize: 20 // Opsional: Membantu jaring (grid) terbagi rata 0, 20, 40, dst.
-                                }
+                                pointLabels: { font: { size: 13, weight: 'bold' }, color: '#e9ecef', padding: 15 },
+                                ticks: { display: false, stepSize: 20 }
                             }
                         }
                     }
                 });
+
+                // 2. Ambil data dari database menggunakan Fetch API
+                fetch('data_chart.php')
+                    .then(response => response.json())
+                    .then(databaseData => {
+                        
+                        if(databaseData.length > 0) {
+                            let stateIndex = 0; // State awal (Semester 1)
+                            const labelEl = document.getElementById('labelSemester');
+
+                            // Fungsi untuk memperbarui data ke dalam grafik
+                            function updateChartSCADA() {
+                                // Pecah data string "80,90,70" menjadi array [80, 90, 70]
+                                const arrayPraktik = databaseData[stateIndex].nilai_praktik.split(',');
+                                const arrayTeori = databaseData[stateIndex].nilai_teori.split(',');
+
+                                // Suntikkan data ke grafik
+                                skillsChart.data.datasets[0].data = arrayPraktik;
+                                skillsChart.data.datasets[1].data = arrayTeori;
+                                
+                                // Ubah teks Judul Semester
+                                labelEl.innerText = databaseData[stateIndex].semester;
+                                
+                                // Animasikan perubahannya!
+                                skillsChart.update();
+
+                                // State Machine Logic: Jika sudah di data terakhir, kembali ke 0
+                                stateIndex++;
+                                if(stateIndex >= databaseData.length) {
+                                    stateIndex = 0;
+                                }
+                            }
+
+                            // Jalankan update pertama kali secara instan
+                            updateChartSCADA();
+
+                            // Buat Loop Timer (Interupt Timer) setiap 3000ms (3 detik)
+                            setInterval(updateChartSCADA, 3000);
+                        } else {
+                            document.getElementById('labelSemester').innerText = "Data Kosong";
+                        }
+
+                    })
+                    .catch(error => console.error('Gagal mengambil data:', error));
             }
         });
     </script>
